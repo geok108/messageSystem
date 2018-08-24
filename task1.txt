@@ -1,0 +1,18 @@
+
+
+The issues that I noticed are:
+1) the while loop is not closed, '}' is missing
+2) instead of $_SERVER['PHP_SELF'] I would use $_SERVER['HTTP_REFERER'] since the first will return the php filename instead of the url of the page
+
+Updated code:
+
+<?php
+mysql_connect('localhost', 'root', '');
+mysql_select_db('mydatabase');
+$id = $_GET['id'];
+$query = mysql_query("SELECT * FROM videos WHERE id='" . $id . "'");
+while ($video = mysql_fetch_assoc($query)) {
+echo '<h3>' . $video['title'] . '</h3>';
+echo $video['description'];
+echo 'You are viewing <a href="' . $_SERVER['HTTP_REFERER'] . '?id=' . $_GET['id'] . '">This video</a>';
+}
