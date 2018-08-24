@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+
+<h2>Available Chatrooms</h2>
+{% for chatroom in chatrooms %}
+
+<a href="/user/id={{user.id}}/chatroom/id={{chatroom.id}}">{{ chatroom.name }}</a><br>
+{% endfor %}
+<br>
+<a href="/user/id={{user.id}}/createchatroom">CREATE CHATROOM</a>
+
+
+{% if user.role == 1 %}
+<h3>Send system message</h3>
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+
+{% endif %}
+
+
+<br>
+<br>
+<a href="/">Logout</a>
+
+</body>
+</html>
+

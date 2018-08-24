@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chatroom {{chatroom_id}}</title>
+</head>
+<body>
+<h3><a href="/user/id={{userId}}">HOME</a></h3>
+
+<h1>Chatroom {{chatroom_id}}</h1>
+
+<a href="/user/id={{userId}}/chatroom/id={{chatroom_id}}/register">Register in this chatroom</a>
+
+<h2>Users</h2>
+{% for user in users %}
+
+{{ user.name }}<br>
+{% endfor %}
+
+
+{% if usr.chatroomId == chatroom_id %}
+
+<h2>Messages</h2>
+{% for message in messages %}
+{{ message.timestamp|date('d-m-Y H:i:s') }}
+{{ message.contextText }}<br>
+{% endfor %}
+<br>
+
+
+{{ form_start(form) }}
+{{ form_widget(form) }}
+{{ form_end(form) }}
+
+{% endif %}
+
+
+</body>
+</html>

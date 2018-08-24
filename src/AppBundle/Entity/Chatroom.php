@@ -12,14 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Chatroom
 {
-
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
-    private $id;
-
     /**
      * @var integer
      *
@@ -34,6 +26,14 @@ class Chatroom
      */
     private $name;
 
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
 
     /**
      * @return int

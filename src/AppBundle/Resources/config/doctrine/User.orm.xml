@@ -9,5 +9,15 @@
         <option name="fixed"/>
       </options>
     </field>
+    <field name="role" type="integer" column="role" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="chatroomId" type="integer" column="chatroom_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
   </entity>
 </doctrine-mapping>

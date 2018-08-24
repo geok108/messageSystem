@@ -6,22 +6,20 @@
 </head>
 <body>
 
-
-<h2>Available Chatrooms</h2>
-{% for chatroom in chatrooms %}
-
-{{ chatroom.name }}<br>
-{% endfor %}
-
-<a href="/createchatroom">CREATE CHATROOM</a>
-
-
 <h2>Users</h2>
 {% for user in users %}
 
-{{ user.name }}<br>
-{% endfor %}
+<a href="/user/id={{user.id}}">Login with user {{ user.name }}
 
+    {% if user.role == 0 %}
+    (Regular)
+    {% else %}
+    (Admin)
+    {% endif %}
+
+</a> <br>
+{% endfor %}
+<br>
 <a href="/createuser">CREATE USER</a>
 
 <br>

@@ -1,6 +1,3 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-create_chatroom:
-  resource: '@AppBundle/Controller/'
-  type: annotation

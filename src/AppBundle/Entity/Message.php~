@@ -43,13 +43,6 @@ class Message
     /**
      * @var integer
      *
-     * @ORM\Column(name="chatroom_id", type="integer", nullable=true)
-     */
-    private $chatroomId;
-
-    /**
-     * @var integer
-     *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
@@ -118,22 +111,6 @@ class Message
     public function setTimestamp($timestamp)
     {
         $this->timestamp = $timestamp;
-    }
-
-    /**
-     * @return int
-     */
-    public function getChatroomId()
-    {
-        return $this->chatroomId;
-    }
-
-    /**
-     * @param int $chatroomId
-     */
-    public function setChatroomId($chatroomId)
-    {
-        $this->chatroomId = $chatroomId;
     }
 
     /**

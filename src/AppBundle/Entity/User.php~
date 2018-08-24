@@ -29,7 +29,8 @@ class User
     /**
      * @var integer
      *
-     * @ORM\Column(name="chatroom_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Chatroom", inversedBy="users")
+     * @ORM\JoinColumn(name="chatroom_id", referencedColumnName="id", nullable=true)
      */
     private $chatroomId;
 

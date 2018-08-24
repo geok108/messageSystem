@@ -20,5 +20,10 @@
       </options>
     </field>
     <field name="timestamp" type="datetime" column="timestamp" nullable="false"/>
+    <field name="chatroomId" type="integer" column="chatroom_id" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
   </entity>
 </doctrine-mapping>
