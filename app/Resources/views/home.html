@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+
+<h2>Available Chatrooms</h2>
+{% for chatroom in chatrooms %}
+
+{{ chatroom.name }}<br>
+{% endfor %}
+
+<a href="/createchatroom">CREATE CHATROOM</a>
+
+
+<h2>Users</h2>
+{% for user in users %}
+
+{{ user.name }}<br>
+{% endfor %}
+
+<a href="/createuser">CREATE USER</a>
+
+<br>
+
+</body>
+</html>
+
